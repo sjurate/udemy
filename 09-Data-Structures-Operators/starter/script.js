@@ -473,3 +473,32 @@ rest
 console.log(rest);
 
 console.log(rest.get(1));
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(airline.length);
+console.log('B737'.length);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal'));
+
+// first parameter - beginning of the string that is left. second - parameter - the end of the string that is left. Substring. Does not change original string. Always a NEW string is returned
+
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got a middle seat :(');
+  else console.log('You are lucky!');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('11C');
+checkMiddleSeat('1E');
