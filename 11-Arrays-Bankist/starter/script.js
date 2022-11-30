@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -109,3 +109,48 @@ console.log(letters);
 // JOIN
 
 console.log(letters.join('-'));
+
+// AT
+// works with strings too
+
+const arr3 = [23, 11, 64];
+console.log(arr3[0]);
+console.log(arr3.at(0));
+
+//getting the last elements
+console.log(arr3[arr3.length - 1]);
+console.log(arr3.slice(-1)[0]);
+//new way
+console.log(arr3.at(-1));
+
+// FOREACH
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+for (const [i, movement] of movements.entries()) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}:You withdraw ${Math.abs(movement)}`);
+  }
+}
+
+console.log(`----FOREACH------`);
+
+//foreacg requires callback function
+// has 3 params - item, index, whole array
+// continue and break doesn't work with foreach method
+
+movements.forEach(function (movement, i, arr) {
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdraw ${Math.abs(movement)}`);
+  }
+});
+
+// remembering Set
+const arr4 = ['blue', 'red', 'green', 'blue', 'yellow', 'pink', 'red'];
+
+const arr5 = [...new Set(arr4)];
+console.log(arr5);
