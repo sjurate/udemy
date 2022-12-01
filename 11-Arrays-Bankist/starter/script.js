@@ -78,14 +78,33 @@ const displayMovements = function (movements) {
   });
 };
 
-displayMovements(account1.movements);
+//displayMovements(account1.movements);
 // console.log(containerMovements.innerHTML);
 
-const calcDisplayBalance = function (movements) {
-  const balance = movements.reduce((acc, mov) => acc + mov, 0);
-  labelBalance.textContent = `${balance} Eur`;
+const calcDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((acc, mov) => acc + mov, 0);
+  labelBalance.textContent = `${acc.balance} Eur`;
 };
-calcDisplayBalance(account1.movements);
+//calcDisplayBalance(account1.movements);
+
+const calcDisplaySummary = function (acc) {
+  const incomes = acc.movements
+    .filter(mov => mov > 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  const out = acc.movements
+    .filter(mov => mov < 0)
+    .reduce((acc, mov) => acc + mov, 0);
+  const interest = acc.movements
+    .filter(mov => mov > 0)
+    .map(deposit => (deposit * acc.interestRate) / 100)
+    .filter((int, i, arr) => int >= 1)
+    .reduce((acc, int) => acc + int, 0);
+  labelSumIn.textContent = `${incomes} Eur`;
+  labelSumOut.textContent = `${Math.abs(out)} Eur`;
+  labelSumInterest.textContent = `${interest} Eur`;
+};
+
+//calcDisplaySummary(account1.movements);
 
 const createUserNames = function (accs) {
   accs.forEach(function (acc) {
@@ -101,6 +120,113 @@ const createUserNames = function (accs) {
 createUserNames(accounts);
 console.log(accounts);
 
+// PIPELINE
+// You can chain next method to an operation if the one before returns a new array
+
+// const totalDepositsUSD = movements
+//   .filter(mov => mov > 0)
+//   .map((mov, i, arr) => {
+//     console.log(arr);
+//     return mov * 1.1;
+//   })
+//   .reduce((acc, mov) => acc + mov, 0);
+
+const updateUI = function (acc) {
+  // Display movements
+  displayMovements(acc.movements);
+  // Display balance
+  calcDisplayBalance(acc);
+  // Display summary
+  calcDisplaySummary(acc);
+};
+
+// EVENT HANDLERS
+
+let currentAccount;
+
+btnLogin.addEventListener('click', function (event) {
+  //prevent form from submitting
+  event.preventDefault();
+  console.log('login');
+  currentAccount = accounts.find(
+    acc => acc.userName === inputLoginUsername.value.toUpperCase()
+  );
+  console.log(currentAccount);
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    // Display UI and welcome msg
+    labelWelcome.textContent = `Welcome back ${
+      currentAccount.owner.split(' ')[0]
+    }`;
+
+    containerApp.style.opacity = 100;
+
+    // Clear the input fields
+    inputLoginUsername.value = inputLoginPin.value = '';
+    // get rid of focus on input field
+    inputLoginPin.blur();
+
+    updateUI(currentAccount);
+  }
+});
+
+btnTransfer.addEventListener('click', function (event) {
+  event.preventDefault();
+  const amount = Number(inputTransferAmount.value);
+  const receiverAcc = accounts.find(
+    acc => acc.userName === inputTransferTo.value.toUpperCase()
+  );
+
+  inputTransferAmount.value = inputTransferTo.value = '';
+
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    amount < currentAccount.balance &&
+    receiverAcc?.userName !== currentAccount.userName
+  ) {
+    // doing the transfer
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+
+    // Update UI
+    updateUI(currentAccount);
+  }
+});
+
+btnLoan.addEventListener('click', function (e) {
+  e.preventDefault();
+  const amount = Number(inputLoanAmount.value);
+  if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
+    // Add movement
+    currentAccount.movements.push(amount);
+    // Update UI
+    updateUI(currentAccount);
+  }
+  inputLoanAmount.value = '';
+});
+
+btnClose.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (
+    inputCloseUsername.value.toUpperCase() === currentAccount.userName &&
+    Number(inputClosePin.value) === currentAccount.pin
+  ) {
+    const index = accounts.findIndex(
+      acc => acc.userName === currentAccount.userName
+    );
+    console.log(index);
+
+    // Delete account
+    accounts.splice(index, 1);
+
+    // Hide UI
+    containerApp.style.opacity = 0;
+  }
+
+  inputCloseUsername.value = inputClosePin.value = '';
+});
+
 /////////////////////////////////////////////////
 // LECTURES
 
@@ -110,7 +236,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// // const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -228,6 +354,28 @@ const checkDogs = function (dogsJulia, dogsKate) {
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 
+const calcAverageDogHumanYear = function (arr) {
+  const humanAges = arr.map(a => (a <= 2 ? a * 2 : a * 4 + 16));
+  console.log(humanAges);
+  const excludesAges = humanAges.filter(a => a > 18);
+  console.log(excludesAges);
+  const avgAge =
+    excludesAges.reduce((acc, a, i, arr) => acc + a, 0) / excludesAges.length;
+  // excludesAges.reduce((acc, a, i, arr) => acc + a / arr.length, 0);
+  console.log(avgAge);
+  return avgAge;
+};
+
+// chaining the same func
+
+const calcAverageDogHumanYear2 = arr =>
+  arr
+    .map(a => (a <= 2 ? a * 2 : a * 4 + 16))
+    .filter(a => a > 18)
+    .reduce((acc, a, i, arr) => acc + a / arr.length, 0);
+
+calcAverageDogHumanYear([5, 2, 4, 1, 15, 8, 3]);
+
 // MAP method
 
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
@@ -246,6 +394,40 @@ const deposits = movements.filter(function (mov) {
   return mov > 0;
   // filter(mov => mov < 0)
 });
+
+// INCLUDES
+// returns true if there is at least one element that EQUALS param
+console.log(movements.includes(-130));
+
+// SOME
+// returns true if there is at least one element in the array inline with CONDITION. If there is none- returns false
+
+const anydeposits = movements.some(mov => mov > 0);
+console.log(anydeposits);
+
+// EVERY
+// returns true if all elements in the array are inline with CONDITION. If at least one doesn't - returns false
+
+console.log(movements.every(mov => mov > 0));
+
+// separate callback
+
+// const deposit = mov => mov > 0;
+// console.log(movements.some(deposit));
+// console.log(movements.every(deposit));
+// console.log(movements.filter(deposit));
+
+//FIND method
+// will return FIRST element in the array when the condition is TRUE
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+
+console.log(firstWithdrawal);
+
+console.log(accounts);
+const account = accounts.find(acc => acc.userName === 'JD');
+
+console.log(account);
 
 // accumulator => snowball
 // first param - function, second - acc value (ex 0)
