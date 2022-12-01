@@ -454,3 +454,38 @@ const max = movements.reduce((acc, mov) => {
 }, movements[0]);
 
 console.log(max);
+
+// FLAT method
+
+// dismantles arrays in the main array, leaving separate values in main array
+// goes one level deep by default
+// if more levels are needed - accepts param - example 2 - goes 2 levels
+
+const arr6 = [[1, 2, 3], [4, 5, 6], 7, 8];
+
+console.log(arr6.flat());
+
+const arr7 = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+
+// const accountMovements = accounts.map(acc => acc.movements);
+// const allMovements = accountMovements.flat();
+// const overallBalance = allMovements.reduce((acc, mov) => acc + mov, 0);
+
+// ===
+
+const overallBalance2 = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overallBalance2);
+
+// FLAT MAP
+// maps and then flats array
+// only goes one level
+
+const overallBalance3 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+
+console.log(overallBalance3);
