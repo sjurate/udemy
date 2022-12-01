@@ -251,3 +251,26 @@ btnSort.addEventListener('click', function (e) {
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
+
+// instead of Number(blabla) we can write +blabla
+// still converts to number
+
+// ----- PARSE
+
+// gets rid of everything after the number
+//stops after .
+console.log(Number.parseInt('30px', 10)); // -> 30
+//won't work
+console.log(Number.parseInt('e23', 10)); // -> 30
+
+// doesn't stop after .
+console.log(Number.parseFloat('2.5rem')); // -> 2.5
+
+// ----- NAN
+// check if value is literaly NaN
+console.log(Number.isNaN('20'));
+
+// ----- isFINITE - the best way to check if value is really a number
+console.log(Number.isFinite(20)); // -> true
+console.log(Number.isFinite(+'23')); // -> false
+console.log(Number.isFinite(23 / 0)); // -> false
