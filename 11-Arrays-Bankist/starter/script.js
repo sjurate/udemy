@@ -62,9 +62,12 @@ const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
 /////////////////////////////////////////////////
-const displayMovements = function (movements) {
+const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
-  movements.forEach(function (mov, i) {
+
+  const movs = sort ? [...movements].sort((a, b) => a - b) : movements;
+
+  movs.forEach(function (mov, i) {
     const type = mov > 0 ? 'deposit' : 'withdrawal';
     const html = `
     <div class="movements__row">
@@ -225,6 +228,13 @@ btnClose.addEventListener('click', function (e) {
   }
 
   inputCloseUsername.value = inputClosePin.value = '';
+});
+
+let sorted = false;
+btnSort.addEventListener('click', function (e) {
+  e.preventDefault();
+  displayMovements(currentAccount.movements, !sorted);
+  sorted = !sorted;
 });
 
 /////////////////////////////////////////////////
@@ -489,3 +499,36 @@ const overallBalance3 = accounts
   .reduce((acc, mov) => acc + mov, 0);
 
 console.log(overallBalance3);
+
+// ----------  SORTING  ---------------
+// Changes original array!!!!!!!!!!!!!!
+// by default - sorts alphabetically
+
+const owners = ['Jonas', 'Zach', 'Adam', 'Martha'];
+
+console.log(owners.sort());
+
+// return < 0 (-1), A, B (keep order) - negative
+// return > 0 (1), B, A (switch order) - positive
+
+// ascending
+// movements.sort((curr, next) => {
+//   if (curr > next) {
+//     return 1;
+//   } else if (curr < next) {
+//     return -1;
+//   }
+// });
+movements.sort((curr, next) => curr - next);
+
+// descending
+// movements.sort((curr, next) => {
+//   if (curr > next) {
+//     return -1;
+//   } else if (curr < next) {
+//     return 1;
+//   }
+// });
+movements.sort((curr, next) => next - curr);
+
+console.log(movements);
