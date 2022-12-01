@@ -532,3 +532,36 @@ movements.sort((curr, next) => curr - next);
 movements.sort((curr, next) => next - curr);
 
 console.log(movements);
+
+// FILL method
+
+const arr8 = [1, 2, 3, 4, 5];
+
+console.log([1, 2, 3, 4, 5]);
+console.log(new Array(1, 2, 3, 4, 5));
+
+const x = new Array(7);
+console.log(x);
+// 3 params - firts with WHAT to fill, 2nd - where to start, 3rd - where to end
+x.fill(1, 3, 5);
+console.log(x);
+
+// pakeis jau esamas reiksmes
+arr8.fill(23, 2, 5);
+console.log(arr8);
+
+// ARRAY.FROM
+
+const y = Array.from({ length: 7 }, () => 1);
+const z = Array.from({ length: 7 }, (_, i) => i + 1);
+
+console.log(z);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('Eur', ''))
+  );
+  // const m = movementsUI.map(el => Number(el.textContent.replace('Eur', '')));
+  console.log(movementsUI);
+});
