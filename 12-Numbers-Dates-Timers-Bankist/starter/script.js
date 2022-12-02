@@ -259,7 +259,7 @@ btnSort.addEventListener('click', function (e) {
 
 // gets rid of everything after the number
 //stops after .
-console.log(Number.parseInt('30px', 10)); // -> 30
+console.log(typeof parseInt('30px', 10)); // -> 30
 //won't work
 console.log(Number.parseInt('e23', 10)); // -> 30
 
@@ -316,3 +316,96 @@ console.log((2.7).toFixed(0));
 console.log((2.7).toFixed(3)); // ->  2.700
 console.log((2.345).toFixed(2)); // -> 2.35
 console.log(+(2.345).toFixed(2)); // -> 2.35 (number)
+
+// REMAINDER operator ------------------
+// grazina liekana po padalinimo
+// naudinga, kai reikia pasirinkti KAS KELINTA
+
+console.log(5 % 2); // -> 1
+console.log(8 % 3); // -> 2
+
+// even numbers - those that divided by 2 don't have liekana - lyginiai.
+// number % 2 = 0
+console.log(6 % 2); // --> 0 , vadinasi even
+
+// odd numbers: number % 2 != 0 (nelygu nuliui)
+console.log(7 % 2); // --> 1 , vadinasi odd
+
+const isEven = n => n % 2 === 0;
+
+labelBalance.addEventListener('click', function () {
+  [...document.querySelectorAll('.movements__row')].forEach((row, i) => {
+    if (i % 2 === 0) {
+      row.style.backgroundColor = 'orangered';
+    }
+    if (i % 3 === 0) {
+      row.style.backgroundColor = 'skyblue';
+    }
+  });
+});
+
+// NUMERIC SEPARATORS
+// 287,460,000,000;
+// JS ignores _ , reads it as a number without breaks
+const diameter = 287_460_000_000;
+console.log();
+
+const priceCents = 345_99;
+console.log(priceCents);
+
+const transferFee = 15_00; // ===
+const transferFee2 = 1_500;
+
+const PI = 3.14_15;
+
+// BIGINT
+// to display biger INT than max_safe_integer we need to write 'n' at the end or BigInt(number)
+
+console.log(454661311654684741315616864n);
+console.log(BigInt(231651515641));
+console.log(156468479415651688n * 10000000n);
+
+// won't work!
+// can't mix types
+//console.log(2641684151n * 1564);
+
+// Math() operations won't work on BigInt
+
+// ------------------- DATES ------------------
+// ********************************************
+
+// Create a date
+// const now = new Date();
+
+// console.log(now);
+// console.log(new Date('Dec 02 2022 10:49:51'));
+// console.log(new Date('December 24, 2015'));
+
+// console.log(new Date(account1.movementsDates[0]));
+
+// console.log(new Date(2037, 10, 19, 15, 23, 5));
+// console.log(new Date(2037, 10, 31));
+
+// console.log(new Date(0));
+// console.log(new Date(3 * 24 * 60 * 1000));
+
+// number in milisecons is called TIMESTAMP (countis since 1970 Jan 01)
+
+const future = new Date(2037, 10, 19, 15, 23, 5);
+console.log(future);
+console.log(future.getFullYear());
+console.log(future.getMonth());
+console.log(future.getDate()); // day of the month
+console.log(future.getDay()); // day of the week
+console.log(future.getHours());
+console.log(future.getMinutes());
+console.log(future.getSeconds());
+console.log(future.toISOString());
+console.log(future.getTime());
+
+console.log(new Date(2142249785000));
+
+// current TIMESTAMP
+console.log(Date.now());
+
+future.setFullYear(2040); // will change a year to 2040 in that date
