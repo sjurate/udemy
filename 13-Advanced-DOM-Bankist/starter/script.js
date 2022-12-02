@@ -30,7 +30,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-// SELECTING ELEMENTS
+// SELECTING ELEMENTS --------------------------
 
 console.log(document.documentElement);
 console.log(document.head);
@@ -77,3 +77,37 @@ document
     message.remove();
     // message.parentElement.removeChild(message)
   });
+
+// STYLES -----------------------------------
+
+message.style.backgroundColor = '#37383d';
+message.style.width = '120%';
+
+console.log(getComputedStyle(message).color);
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 30 + 'px';
+
+// to manipulate ROOT style "variables"
+
+// document.documentElement.style.setProperty('--color-primary', 'orangered');
+
+// ATTRIBUTES
+
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.getAttribute('src'));
+console.log(logo.className);
+
+logo.alt = 'Beautiful minimalist logo';
+
+//setting an attr
+logo.setAttribute('company', 'Bankist');
+
+const link = document.querySelector('.nav__link--btn');
+console.log(link.href);
+console.log(link.getAttribute('href'));
+
+// Data attributes
