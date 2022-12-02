@@ -187,15 +187,35 @@ const updateUI = function (acc) {
   calcDisplaySummary(acc);
 };
 
+const startLogoutTimer = function () {
+  const tick = function () {
+    const min = String(Math.trunc(time / 60)).padStart(2, 0);
+    const sec = String(time % 60).padStart(2, 0);
+
+    // Each call print the remaining time to UI
+    labelTimer.textContent = `${min}:${sec}`;
+
+    // When time 0 seconds, stop timer and log out - hie UI
+    if (time === 0) {
+      clearInterval(timer);
+      containerApp.style.opacity = 0;
+      labelWelcome.textContent = `Log in to get started`;
+    }
+    // Decrease time 1s
+    time--;
+  };
+  // Set time to 5 min
+  let time = 120;
+
+  // Call timer every 1 secomd
+  tick();
+  const timer = setInterval(tick, 1000);
+  return timer;
+};
+
 ///////////////////////////////////////
 // Event handlers
-let currentAccount;
-
-// FAKE ALWYS LOGGED IN
-
-currentAccount = account1;
-updateUI(currentAccount);
-containerApp.style.opacity = 100;
+let currentAccount, timer;
 
 // Experimenting with an API DATE
 // const now = new Date();
@@ -264,6 +284,10 @@ btnLogin.addEventListener('click', function (e) {
     inputLoginUsername.value = inputLoginPin.value = '';
     inputLoginPin.blur();
 
+    // START LOGOUT TIMER
+    if (timer) clearInterval(timer);
+    timer = startLogoutTimer();
+
     // Update UI
     updateUI(currentAccount);
   }
@@ -293,6 +317,10 @@ btnTransfer.addEventListener('click', function (e) {
 
     // Update UI
     updateUI(currentAccount);
+
+    //reset timer
+    clearInterval(timer);
+    timer = startLogoutTimer();
   }
 });
 
@@ -309,6 +337,9 @@ btnLoan.addEventListener('click', function (e) {
       currentAccount.movementsDates.push(new Date().toISOString());
       // Update UI
       updateUI(currentAccount);
+      //reset timer
+      clearInterval(timer);
+      timer = startLogoutTimer();
     }, 2500);
   }
   inputLoanAmount.value = '';
@@ -555,10 +586,10 @@ if (ing.includes('spinach')) clearTimeout(pizzaTimer);
 
 // SET INTERVAL
 
-setInterval(function () {
-  const now = new Date();
-  const hours = now.getHours();
-  const min = `${now.getMinutes()}`.padStart(2, 0);
-  const sec = `${now.getSeconds()}`.padStart(2, 0);
-  console.log(`${hours}:${min}:${sec}`);
-}, 1000);
+// setInterval(function () {
+//   const now = new Date();
+//   const hours = now.getHours();
+//   const min = `${now.getMinutes()}`.padStart(2, 0);
+//   const sec = `${now.getSeconds()}`.padStart(2, 0);
+//   console.log(`${hours}:${min}:${sec}`);
+// }, 1000);
