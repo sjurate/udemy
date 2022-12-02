@@ -302,14 +302,14 @@ btnLoan.addEventListener('click', function (e) {
   const amount = Math.floor(inputLoanAmount.value);
 
   if (amount > 0 && currentAccount.movements.some(mov => mov >= amount * 0.1)) {
-    // Add movement
-    currentAccount.movements.push(amount);
-
-    // Add loan date
-    currentAccount.movementsDates.push(new Date().toISOString());
-
-    // Update UI
-    updateUI(currentAccount);
+    setTimeout(function () {
+      // Add movement
+      currentAccount.movements.push(amount);
+      // Add loan date
+      currentAccount.movementsDates.push(new Date().toISOString());
+      // Update UI
+      updateUI(currentAccount);
+    }, 2500);
   }
   inputLoanAmount.value = '';
 });
@@ -533,3 +533,32 @@ const options = {
 console.log('US:', new Intl.NumberFormat('en-Us', options).format(numb));
 console.log('Germany:', new Intl.NumberFormat('de-DE', options).format(numb));
 console.log('LT:', new Intl.NumberFormat('lt-LT', options).format(numb));
+
+// SET TIMEOUT
+// *********** !!!!!!!!!!!
+
+// 1st arg - function to be executed
+// 2nd arg - time in miliseconds
+// 3rd - arg for the first function
+// 4th - arg for the first function
+
+const ing = ['olives', 'tomatos'];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} ${ing2}`),
+  3000,
+  ...ing
+);
+
+console.log('waiting');
+
+if (ing.includes('spinach')) clearTimeout(pizzaTimer);
+
+// SET INTERVAL
+
+setInterval(function () {
+  const now = new Date();
+  const hours = now.getHours();
+  const min = `${now.getMinutes()}`.padStart(2, 0);
+  const sec = `${now.getSeconds()}`.padStart(2, 0);
+  console.log(`${hours}:${min}:${sec}`);
+}, 1000);
