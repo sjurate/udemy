@@ -232,3 +232,35 @@ const h1 = document.querySelector('h1');
 //   console.log('Nav', e.target);
 //   this.style.backgroundColor = randomColor();
 // });
+
+// DOM TRAVERSING
+
+// going downwards: child
+
+console.log(h1.querySelectorAll('.highlight'));
+//gives HTML collection of children (direct)
+console.log(h1.children);
+// first child
+h1.firstElementChild.style.color = 'white';
+// last child
+h1.lastElementChild.style.color = 'orangered';
+
+// going upwards : parents
+// direct parent
+console.log(h1.parentNode);
+console.log(h1.parentElement);
+
+//important
+// closest parent element having that specific class
+// like the opposite of querySelector - gives closest parent no matter how deep it is
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
+
+// goind sideways: siblings
+console.log(h1.previousElementSibling);
+console.log(h1.nextElementSibling);
+// to get all siblings - going up to parent, then reading all children
+console.log(h1.parentElement.children);
+
+[...h1.parentElement.children].forEach(function (el) {
+  if (el !== h1) el.style.transform = 'scale(0.5)';
+});
