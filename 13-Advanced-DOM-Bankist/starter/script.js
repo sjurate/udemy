@@ -1,12 +1,15 @@
 'use strict';
 
 ///////////////////////////////////////
-// Modal window
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+
+// Modal window
 
 const openModal = function (e) {
   e.preventDefault();
@@ -27,6 +30,66 @@ overlay.addEventListener('click', closeModal);
 document.addEventListener('keydown', function (e) {
   if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
     closeModal();
+  }
+});
+
+///////////////////////////////////////
+// SMOOTH SCROLLING
+
+btnScrollTo.addEventListener('click', function (e) {
+  // pasirinkti elemento, iki kurio norima nuskrolinti, koordinates
+  const s1coords = section1.getBoundingClientRect();
+
+  console.log('Current position', s1coords);
+
+  console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
+  // console.log(
+  //   'Height/width viewport:',
+  //   document.documentElement.clientHeight,
+  //   document.documentElement.clientWidth
+  // );
+
+  // Scrolling
+
+  // window.scrollTo(
+  //   // current position + current scroll
+  //   s1coords.left + window.pageXOffset,
+  //   s1coords.top + window.pageYOffset
+  // );
+
+  window.scrollTo({
+    left: s1coords.left + window.pageXOffset,
+    top: s1coords.top + window.pageYOffset,
+    behavior: 'smooth',
+  });
+
+  // modern way
+
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+// PAGE NAVIGATION ---------------------------
+
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = el.getAttribute('href');
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+// EVENT DELEGATION
+
+// 1. Add event listener to common parent element
+// 2. Determine what element originated the event
+
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
   }
 });
 
@@ -111,3 +174,61 @@ console.log(link.href);
 console.log(link.getAttribute('href'));
 
 // Data attributes
+
+console.log(logo.dataset.versionNumber);
+
+// CLASSES
+
+logo.classList.add('c', 'j');
+logo.classList.remove('c', 'j');
+logo.classList.toggle('c');
+logo.classList.contains('c');
+
+// More about EVENTS
+
+const h1 = document.querySelector('h1');
+
+// const alertH1 = function (e) {
+//   alert("addEventListener: Great! You're reading the heading.");
+//   //h1.removeEventListener('mouseenter', alertH1);
+// };
+
+// h1.addEventListener('mouseenter', alertH1);
+
+// setTimeout(() => h1.removeEventListener('mouseenter', alertH1), 6000);
+
+// old way
+// h1.onmouseenter = function (e) {
+//   alert("addEventListener: Great! You're reading the heading.");
+// };
+
+// EVENT PHASES
+
+//1) Capturing phase
+//2) Target phase
+//3) Bubbling phase
+
+// const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1));
+
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+
+// console.log(randomColor(0, 255));
+
+// document.querySelector('.nav__link').addEventListener('click', function (e) {
+//   console.log('Link', e.target);
+//   this.style.backgroundColor = randomColor();
+
+// STOP EVENT PROPAGATION - sustabdyti, kad nevyktu ir teviniu elementu event'ai
+// e.stopPropagation();
+//});
+
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   console.log('Container', e.target);
+//   this.style.backgroundColor = randomColor();
+// });
+
+// document.querySelector('.nav').addEventListener('click', function (e) {
+//   console.log('Nav', e.target);
+//   this.style.backgroundColor = randomColor();
+// });
