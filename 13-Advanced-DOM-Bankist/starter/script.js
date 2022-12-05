@@ -1,6 +1,6 @@
 'use strict';
 
-///////////////////////////////////////
+// ***************************************** PAGE
 
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
@@ -93,6 +93,38 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+// TABBED COMPONENT
+
+const tabs = document.querySelectorAll('.operations__tab');
+const tabsContainer = document.querySelector('.operations__tab-container');
+const tabsContent = document.querySelectorAll('.operations__content ');
+
+tabsContainer.addEventListener('click', function (e) {
+  e.preventDefault();
+  // Matching strategy
+  const clicked = e.target.closest('.operations__tab');
+  console.log(clicked);
+
+  // Guard clause
+  if (!clicked) return;
+
+  // Active tab
+  //remove for all
+  tabs.forEach(t => t.classList.remove('operations__tab--active'));
+  // add for correct one
+
+  clicked.classList.add('operations__tab--active');
+
+  // Active content
+  //remove for all
+  tabsContent.forEach(c => c.classList.remove('operations__content--active'));
+  // add for correct one
+  document
+    .querySelector(`.operations__content--${clicked.dataset.tab}`)
+    .classList.add('operations__content--active');
+});
+
+// ************************************* LECTURES
 // SELECTING ELEMENTS --------------------------
 
 console.log(document.documentElement);
