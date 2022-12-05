@@ -125,17 +125,51 @@ nav.addEventListener('mouseout', handleHover.bind(1));
 
 // STICKY NAVIGATION
 
-const initialCoords = section1.getBoundingClientRect();
+// const initialCoords = section1.getBoundingClientRect();
 
-window.addEventListener('scroll', function (e) {
-  if (window.scrollY > initialCoords.top) {
+// window.addEventListener('scroll', function (e) {
+//   if (window.scrollY > initialCoords.top) {
+//     nav.classList.add('sticky');
+//   } else {
+//     nav.classList.remove('sticky');
+//   }
+// });
+
+// INTERSECTION OBSERVER API
+
+// callback function will be called each time that the observed element intersecting the root element intersectiong within threshold
+// const obsCallback = function (entries, observerObj) {
+//   entries.forEach(entry => console.log(entry));
+// };
+
+// const obsOptions = {
+//   root: null,
+//   threshold: [0, 0.2],
+// };
+
+// const observer = new IntersectionObserver(obsCallback, obsOptions);
+
+// observer.observe(section1);
+
+const header = document.querySelector('.header');
+const navHeight = nav.getBoundingClientRect().height;
+
+const stickyNav = function (entries) {
+  const entry = entries[0];
+  console.log(entry);
+  if (!entry.isIntersecting) {
     nav.classList.add('sticky');
   } else {
     nav.classList.remove('sticky');
   }
-});
+};
 
-// INTERS
+const headerObserver = new IntersectionObserver(stickyNav, {
+  root: null,
+  threshold: 0,
+  rootMargin: `-${navHeight}px`,
+});
+headerObserver.observe(header);
 
 // TABBED COMPONENT
 
@@ -171,20 +205,20 @@ tabsContainer.addEventListener('click', function (e) {
 // ************************************* LECTURES
 // SELECTING ELEMENTS --------------------------
 
-console.log(document.documentElement);
-console.log(document.head);
-console.log(document.body);
+// console.log(document.documentElement);
+// console.log(document.head);
+// console.log(document.body);
 
-const header = document.querySelector('.header');
-const allSections = document.querySelectorAll('.section');
-document.getElementById('section--1');
+// const header = document.querySelector('.header');
+// const allSections = document.querySelectorAll('.section');
+// document.getElementById('section--1');
 
-// BY TAG NAME
-// returns HTML collection
-const allButtons = document.getElementsByTagName('button');
-console.log(allButtons);
-// retuns HTML collection
-document.getElementsByClassName('btn');
+// // BY TAG NAME
+// // returns HTML collection
+// const allButtons = document.getElementsByTagName('button');
+// console.log(allButtons);
+// // retuns HTML collection
+// document.getElementsByClassName('btn');
 
 // CREATING and INSERTING ELEMENTS
 
