@@ -404,3 +404,48 @@ console.log(jay);
 
 jay.introduce();
 jay.calAge();
+
+// ------------------------------------
+
+class Account {
+  constructor(owner, currency, pin) {
+    this.owner = owner;
+    this.currency = currency;
+    // protected property
+    this._pin = pin;
+    // protected property (just to let know that this property shouldn't be touched outside the class)
+    this._movements = [];
+    this.locale = navigator.language;
+    console.log(`Thanks for opening an account ${owner}`);
+  }
+  // Public interface
+  getMovements() {
+    return this._movements;
+  }
+  deposit(val) {
+    this._movements.push(val);
+  }
+  withdrawal(val) {
+    this.deposit(-val);
+  }
+  // protected method (just to let know that this method shouldn't be used outside the class)
+  _approveLoan(val) {
+    return true;
+  }
+  requestLoan(val) {
+    if (this.approveLoan(val)) {
+      this.deposit(val);
+      console.log('Loan approved');
+    }
+  }
+}
+
+const acc1 = new Account('Jonas', 'Eur', 1111);
+console.log(acc1);
+
+acc1.deposit(250);
+acc1.withdrawal(140);
+acc1.requestLoan(140);
+acc1.approveLoan(140);
+
+console.log(acc1);
