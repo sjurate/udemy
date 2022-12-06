@@ -376,3 +376,31 @@ martha.calAge();
 
 // INHERITANCE ----------------------------------
 // VOL 3: using Object.create()
+
+const PersonProto1 = {
+  calAge() {
+    console.log(2037 - this.birthYear);
+  },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven1 = Object.create(PersonProto1);
+const StudentProto1 = Object.create(PersonProto1);
+StudentProto1.init = function (firstName, birthYear, course) {
+  PersonProto1.init.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+StudentProto1.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const jay = Object.create(StudentProto1);
+jay.init('Jay', 2010, 'Medicine');
+console.log(jay);
+
+jay.introduce();
+jay.calAge();
