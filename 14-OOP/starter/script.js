@@ -6,7 +6,7 @@
 // Inheritance
 // Polymorphism
 
-// CONSTRUCTOR FUNCTIONS
+// CONSTRUCTOR FUNCTION ---------------------
 // we call() it with the word NEW
 
 const Person = function (firstName, birthYear) {
@@ -109,4 +109,39 @@ car1.accelerate();
 car1.break();
 console.log(car1);
 
-// ES6 CLASSES
+// ES6 CLASSES ----------------------------------
+
+// class expression
+// const PersonCl = class {
+// }
+
+// class declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  // Methods will be added to .prototype property of newly created object
+  calAge() {
+    console.log(2037 - this.birthYear);
+  }
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+
+const jessica = new PersonCl('Jessica', 1989);
+console.log(jessica);
+
+jessica.calAge();
+
+// PersonCl.prototype.greet = function () {
+//   console.log(`Hey ${this.firstName}`);
+// };
+
+jessica.greet();
+
+// 1. Classes are not hoisted (can't use them before they are declared)
+// 2. Classes are first-class citizens
+// 3. Classes are executed in strict mode
