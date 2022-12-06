@@ -61,6 +61,15 @@ console.log(jonas.species, matilda.species);
 console.log(jonas.hasOwnProperty('firstName'));
 console.log(jonas.hasOwnProperty('species'));
 
+// to create STATIC method
+// but it won't be inherited by instances
+
+Person.hey = function () {
+  console.log('Hey there !!!!!!!!!!!!!');
+};
+
+Person.hey();
+
 // Object.prototype
 console.log(jonas.__proto__.__proto__);
 
@@ -115,14 +124,14 @@ console.log(car1);
 // const PersonCl = class {
 // }
 
-// class declaration
+// CLASS declaration
 class PersonCl {
   constructor(fullName, birthYear) {
     this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
-  // Methods will be added to .prototype property of newly created object
+  // Methods will be added to .prototype property of newly created object and will be inherited by instances
   calAge() {
     console.log(2037 - this.birthYear);
   }
@@ -144,6 +153,11 @@ class PersonCl {
   //   get fullName() {
   //     return this._fullName;
   //   }
+
+  // creating static method (won't be inherited by instances )
+  static hey() {
+    console.log('Hey there !!!!!!!!!!!!!');
+  }
 }
 
 const jessica = new PersonCl('Jessica Davis', 1989);
@@ -189,4 +203,97 @@ console.log(account.latest);
 account.latest = 50;
 console.log(account.movements);
 
-// STATIC METHODS --------------------------
+// STATIC METHODS
+// ... not very important
+
+// OBJECT.CREATE ---------------------------------
+// least used way to create prototypas inheritance
+
+// to create methods in prototype
+const PersonProto = {
+  calAge() {
+    console.log(2037 - this.birthYear);
+  },
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+console.log(steven);
+steven.firstName = 'Steven';
+steven.birthYear = 2002;
+
+steven.calAge();
+
+const sarah = Object.create(PersonProto);
+sarah.init('Sarah', 1984);
+sarah.calAge();
+
+// Coding challange
+
+class Cars {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed = this.speed + 10;
+    console.log(this.speed);
+  }
+
+  break() {
+    this.speed = this.speed - 5;
+    console.log(this.speed);
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+}
+
+const car3 = new Cars('Ford', 120);
+console.log(car3.speedUS);
+car3.speedUS = 50;
+
+console.log(car3);
+
+// INHERITANCE ----------------------------------
+// VOL 1: using constructor functions
+
+const Person1 = function (firstName, birthYear) {
+  // Instance properties
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person1.prototype.calAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  //   this.firstName = firstName;
+  //   this.birthYear = birthYear;
+  this.course = course;
+};
+
+// Links student prototype methods to Person1 prototybe methods (inherits from Person1)
+Student.prototype = Object.create(Person1.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+Student.prototype.constructor = Student;
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+
+mike.introduce();
+mike.calAge();
