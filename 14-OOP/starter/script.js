@@ -277,49 +277,102 @@ Person1.prototype.calAge = function () {
   console.log(2037 - this.birthYear);
 };
 
-const Student = function (firstName, birthYear, course) {
-  Person.call(this, firstName, birthYear);
+const Student1 = function (firstName, birthYear, course) {
+  Person1.call(this, firstName, birthYear);
   //   this.firstName = firstName;
   //   this.birthYear = birthYear;
   this.course = course;
 };
 
 // Links student prototype methods to Person1 prototybe methods (inherits from Person1)
-Student.prototype = Object.create(Person1.prototype);
+Student1.prototype = Object.create(Person1.prototype);
 
-Student.prototype.introduce = function () {
+Student1.prototype.introduce = function () {
   console.log(`My name is ${this.firstName} and I study ${this.course}`);
 };
 
-Student.prototype.constructor = Student;
+Student1.prototype.constructor = Student1;
 
-const mike = new Student('Mike', 2020, 'Computer Science');
+const mike = new Student1('Mike', 2020, 'Computer Science');
 
 mike.introduce();
 mike.calAge();
 
-const EV = function (make, speed, charge) {
-  Car.call(this, make, speed);
-  this.charge = charge;
-};
+// Example #2
+// const EV = function (make, speed, charge) {
+//   Car.call(this, make, speed);
+//   this.charge = charge;
+// };
 
-EV.prototype = Object.create(Car.prototype);
+// EV.prototype = Object.create(Car.prototype);
 
-EV.prototype.chargeBattery = function (chargeTo) {
-  this.charge = chargeTo;
-};
+// EV.prototype.chargeBattery = function (chargeTo) {
+//   this.charge = chargeTo;
+// };
 
-EV.prototype.accelerate = function () {
-  this.speed += 20;
-  this.charge = this.charge - this.charge * 0.1;
-  console.log(
-    `${this.make} is going ${this.speed} km/h, with charge of ${this.charge}`
-  );
-};
+// EV.prototype.accelerate = function () {
+//   this.speed += 20;
+//   this.charge = this.charge - this.charge * 0.1;
+//   console.log(
+//     `${this.make} is going ${this.speed} km/h, with charge of ${this.charge}`
+//   );
+// };
 
-const tesla = new EV('Tesla', 120, 23);
+// const tesla = new EV('Tesla', 120, 23);
 
-tesla.chargeBattery(50);
-tesla.break();
-console.log(tesla);
-tesla.accelerate();
+// tesla.chargeBattery(50);
+// tesla.break();
+// console.log(tesla);
+// tesla.accelerate();
+
+// INHERITANCE ----------------------------------
+// VOL 2: using classes
+
+class Person2 {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+  calAge() {
+    console.log(2037 - this.birthYear);
+  }
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name`);
+  }
+  get fullName() {
+    return this._fullName;
+  }
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+  get age() {
+    return 2037 - this.birthYear;
+  }
+  //   calAge() {
+  //     console.log(`I am forever young`);
+  //   }
+}
+
+class Student2 extends Person2 {
+  // if we don't need any new properties, constructor is not needed
+  constructor(fullName, birthYear, course) {
+    // Always needs to happen first
+    // pass params of the parent constructor
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I study ${this.course}`);
+  }
+}
+
+const martha = new Student2('Martha Jones', 2012, 'Architecture');
+
+console.log(martha);
+martha.introduce();
+martha.calAge();
+
+// INHERITANCE ----------------------------------
+// VOL 3: using Object.create()
