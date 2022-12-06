@@ -117,8 +117,8 @@ console.log(car1);
 
 // class declaration
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
@@ -129,9 +129,24 @@ class PersonCl {
   greet() {
     console.log(`Hey ${this.firstName}`);
   }
+
+  get age() {
+    return 2037 - this.birthYear;
+  }
+
+  // Set a property that already exist
+  //   set fullName(name) {
+  //     console.log(name);
+  //     if (name.includes(' ')) this._fullName = name;
+  //     else alert(`${name} is not a full name`);
+  //   }
+
+  //   get fullName() {
+  //     return this._fullName;
+  //   }
 }
 
-const jessica = new PersonCl('Jessica', 1989);
+const jessica = new PersonCl('Jessica Davis', 1989);
 console.log(jessica);
 
 jessica.calAge();
@@ -142,6 +157,36 @@ jessica.calAge();
 
 jessica.greet();
 
+console.log('-------------------');
+console.log(jessica.age);
+
 // 1. Classes are not hoisted (can't use them before they are declared)
 // 2. Classes are first-class citizens
 // 3. Classes are executed in strict mode
+
+const walter = new PersonCl('Walter', 1968);
+
+// SETTERS and GETTERS (optional)
+
+const account = {
+  owner: 'Jonas',
+  movements: [200, 53, 120, 300],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  // accepts ONE PARAM
+  set latest(mov) {
+    this.movements.push(mov);
+  },
+};
+
+// So you don't need to "call" that function (don't need to write account.lates());
+
+console.log(account.latest);
+
+account.latest = 50;
+console.log(account.movements);
+
+// STATIC METHODS --------------------------
