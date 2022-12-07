@@ -437,19 +437,22 @@ class Account {
   }
   deposit(val) {
     this.#movements.push(val);
+    return this;
   }
   withdrawal(val) {
     this.deposit(-val);
+    return this;
   }
   // protected method (just to let know that this method shouldn't be used outside the class)
   _approveLoan(val) {
     return true;
   }
   requestLoan(val) {
-    if (this.#approveLoan(val)) {
+    if (this._approveLoan(val)) {
       this.deposit(val);
       console.log('Loan approved');
     }
+    return this;
   }
 
   // 4) Private methods
@@ -464,5 +467,13 @@ console.log(acc1);
 acc1.deposit(250);
 acc1.withdrawal(140);
 acc1.requestLoan(140);
+
+console.log(acc1.getMovements());
+
+// CHAINING
+
+// if we want to chain class methods, these methos must return 'this'
+
+acc1.deposit(300).deposit(500).withdrawal(25).requestLoan(2500).withdrawal(400);
 
 console.log(acc1.getMovements());
