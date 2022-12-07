@@ -407,23 +407,36 @@ jay.calAge();
 
 // ------------------------------------
 
+// 1) Public fields - public instance field
+// 2) Private fields
+// 3) Public methods
+// 4) Private methods
+// (there is also the static version) - only available on the class
+
 class Account {
+  // 1) Public fields (not on prototype, on instances themselves)
+  locale = navigator.language;
+
+  // 2) Private fields (not on prototype, on instances themselves)
+  #movements = [];
+  #pin;
+
   constructor(owner, currency, pin) {
     this.owner = owner;
     this.currency = currency;
-    // protected property
-    this._pin = pin;
+    this.#pin = pin;
     // protected property (just to let know that this property shouldn't be touched outside the class)
-    this._movements = [];
-    this.locale = navigator.language;
+    // this._movements = [];
+    // this.locale = navigator.language;
     console.log(`Thanks for opening an account ${owner}`);
   }
-  // Public interface
+
+  // 3) Public methods- public interface
   getMovements() {
-    return this._movements;
+    return this.#movements;
   }
   deposit(val) {
-    this._movements.push(val);
+    this.#movements.push(val);
   }
   withdrawal(val) {
     this.deposit(-val);
@@ -433,11 +446,16 @@ class Account {
     return true;
   }
   requestLoan(val) {
-    if (this.approveLoan(val)) {
+    if (this.#approveLoan(val)) {
       this.deposit(val);
       console.log('Loan approved');
     }
   }
+
+  // 4) Private methods
+  //   #approveLoan(val) {
+  //     return true;
+  //   }
 }
 
 const acc1 = new Account('Jonas', 'Eur', 1111);
@@ -446,6 +464,5 @@ console.log(acc1);
 acc1.deposit(250);
 acc1.withdrawal(140);
 acc1.requestLoan(140);
-acc1.approveLoan(140);
 
-console.log(acc1);
+console.log(acc1.getMovements());
