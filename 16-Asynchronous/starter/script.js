@@ -98,22 +98,20 @@ const request = fetch(`https://restcountries.com/v2/name/portugal`);
 
 console.log(request);
 
-// const getCountryData = function (country) {
-//   fetch(`https://restcountries.com/v2/name/${country}`)
-//     .then(function (response) {
-//       console.log(response);
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       console.log(data);
-//       renderCountry(data[0]);
-//     });
-// };
-
 const getCountryData = function (country) {
+  // Country 1
   fetch(`https://restcountries.com/v2/name/${country}`)
     .then(response => response.json())
-    .then(data => renderCountry(data[0]));
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders?.[0];
+      if (!neighbour) return;
+      // Country 2
+      // the value which is returned will be a succuess value of the returned promise
+      return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
+    })
+    .then(response => response.json())
+    .then(data => renderCountry(data, 'neighbour'));
 };
 
 getCountryData('portugal');
