@@ -56,7 +56,12 @@ const renderCountry = function (data, className = '') {
   `;
 
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  //countriesContainer.style.opacity = 1;
+};
+
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  //countriesContainer.style.opacity = 1;
 };
 
 // const getCountryAndNeighbour = function (country) {
@@ -101,7 +106,12 @@ console.log(request);
 const getCountryData = function (country) {
   // Country 1
   fetch(`https://restcountries.com/v2/name/${country}`)
-    .then(response => response.json())
+    // then() accepts 2 functions - 1st for succes case, 2nd - for error case (catching error/handling error)
+    .then(response => {
+      console.log(response);
+      if (!response.ok) throw new Error(`Country not found ${response.status}`);
+      return response.json();
+    })
     .then(data => {
       renderCountry(data[0]);
       const neighbour = data[0].borders?.[0];
@@ -110,8 +120,24 @@ const getCountryData = function (country) {
       // the value which is returned will be a succuess value of the returned promise
       return fetch(`https://restcountries.com/v2/alpha/${neighbour}`);
     })
-    .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    .then(response => {
+      if (!response.ok) throw new Error(`Country not found ${response.status}`);
+      return response.json();
+    })
+    .then(data => renderCountry(data, 'neighbour'))
+    // catch method in the end of chain catches ALL errors in the chain, then we don't need to pass a second error function in .then() method
+    .catch(err => {
+      console.error(`${err} `);
+      renderError(`Something went wrong... ${err.message}`);
+    })
+    // will always be called - no matter if promise is fullfiled or rejected
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    });
 };
 
-getCountryData('portugal');
+btn.addEventListener('click', function () {
+  getCountryData('portugal');
+});
+
+//getCountryData('dfgae');
