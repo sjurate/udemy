@@ -244,3 +244,22 @@ GOOD LUCK 😀
 //   }
 //   console.log(res);
 // });
+
+// CREATING A PROMISE
+// new Promise takes one argument - executor function
+// executor function takes two arguments: resolve and reject functions
+
+const lotteryPromise = new Promise(function (resolve, reject) {
+  console.log('Lottery draw is happening...');
+  setTimeout(function () {
+    if (Math.random() >= 0.5) {
+      //into resolve function we pass a fulfilled value of the Promise
+      resolve('You WIN');
+    } else {
+      // into reject function we pass an error messagge that we will be able to catch later
+      reject(new Error('You lost your money...'));
+    }
+  }, 2000);
+});
+
+lotteryPromise.then(res => console.log(res)).catch(err => console.error(err));
