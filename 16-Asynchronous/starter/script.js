@@ -302,17 +302,17 @@ Promise.reject('abc').catch(res => console.error(res));
 //   });
 // };
 
-const getPosition = function () {
-  return new Promise(function (resolve, reject) {
-    // navigator.geolocation.getCurrentPosition(
-    //   position => resolve(position),
-    //   err => reject(err)
-    // );
-    navigator.geolocation.getCurrentPosition(resolve, reject);
-  });
-};
+// const getPosition = function () {
+//   return new Promise(function (resolve, reject) {
+//     // navigator.geolocation.getCurrentPosition(
+//     //   position => resolve(position),
+//     //   err => reject(err)
+//     // );
+//     navigator.geolocation.getCurrentPosition(resolve, reject);
+//   });
+// };
 
-getPosition().then(position => console.log(position));
+// getPosition().then(position => console.log(position));
 
 // Challenge
 const imgContainer = document.querySelector('.images');
@@ -352,3 +352,45 @@ createImage('img/img-1.jpg')
     currentImg.style.display = 'none';
   })
   .catch(err => console.error(err));
+
+// ASYNC AWAIT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// *************************************************
+
+// in ONE async function we can have ONE OR MORE AWAIT statements
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    // navigator.geolocation.getCurrentPosition(
+    //   position => resolve(position),
+    //   err => reject(err)
+    // );
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+const whereAmI = async function () {
+  //Geolocation - where am I
+  const position = await getPosition();
+
+  const { latitude: lat, longitude: lng } = position.coords;
+
+  // Reverse geocoding - give me country where am I
+  const responseGeo = await fetch(
+    `https://geocode.xyz/${lat},${lng}?geoit=json`
+  );
+  const dataGeo = await responseGeo.json();
+
+  console.log(dataGeo);
+
+  // Country of where I am data:
+  // fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(response =>
+  //   console.log(response)
+  // );
+  const response = await fetch(
+    `https://restcountries.eu/rest/v2/name/${dataGeo.country}`
+  );
+  const data = await response.json();
+  renderCountry(data[0]);
+};
+
+whereAmI();
