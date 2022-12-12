@@ -394,13 +394,15 @@ const whereAmI = async function () {
     if (!response.ok) throw new Error('Problem getting country data...');
     const data = await response.json();
     renderCountry(data[0]);
+    return `You are in ${dataGeo.city}, ${dataGeo.country}`;
   } catch (err) {
     console.error(err.message);
     renderError(`Something went wrong... ${err.message}`);
+
+    // Reject promise returned from async function (because by default async functions always return as fulfilled )
+    throw err;
   }
 };
-
-whereAmI();
 
 // try {
 //   let y = 1;
@@ -409,3 +411,24 @@ whereAmI();
 // } catch (err) {
 //   alert(err.message);
 // }
+
+// console.log('1: Will get location');
+// // const city = whereAmI();
+// // console.log(city); // ---> will be a promise
+
+// whereAmI()
+//   .then(city => console.log(`2: ${city}`))
+//   .catch(err => console.error(`2: ${err}`))
+//   .finally(() => console.log('3: Finished getting location')); // only fires when Promise is fulfilled
+
+//console.log('3: Finished getting location')
+
+(async function () {
+  try {
+    const city = await whereAmI();
+    console.log(`2: ${city}`);
+  } catch (err) {
+    console.error(`2: ${err.message}`);
+  }
+  console.log('3: Finished getting location');
+})();
