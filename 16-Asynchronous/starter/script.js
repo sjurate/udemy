@@ -423,12 +423,34 @@ const whereAmI = async function () {
 
 //console.log('3: Finished getting location')
 
-(async function () {
+// (async function () {
+//   try {
+//     const city = await whereAmI();
+//     console.log(`2: ${city}`);
+//   } catch (err) {
+//     console.error(`2: ${err.message}`);
+//   }
+//   console.log('3: Finished getting location');
+// })();
+
+const get3countries = async function (c1, c2, c3) {
   try {
-    const city = await whereAmI();
-    console.log(`2: ${city}`);
+    // const [data1] = await getJSON(`https://restcountries.com/v2/name/${c1}`);
+    // const [data2] = await getJSON(`https://restcountries.com/v2/name/${c2}`);
+    // const [data3] = await getJSON(`https://restcountries.com/v2/name/${c3}`);
+    // console.log([data1.capital, data2.capital, data3.capital]);
+
+    // takes in an array of promises and will return a new Promise which will run all Promises in the array at the same time. Returns an array
+    // If one of promises rejects, then Promise.all() also rejects
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/v2/name/${c1}`),
+      getJSON(`https://restcountries.com/v2/name/${c2}`),
+      getJSON(`https://restcountries.com/v2/name/${c3}`),
+    ]);
+    console.log(data.map(d => d[0].capital));
   } catch (err) {
-    console.error(`2: ${err.message}`);
+    console.error(err);
   }
-  console.log('3: Finished getting location');
-})();
+};
+
+get3countries('portugal', 'canada', 'tanzania');
