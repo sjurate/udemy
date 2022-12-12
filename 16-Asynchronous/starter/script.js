@@ -317,41 +317,41 @@ Promise.reject('abc').catch(res => console.error(res));
 // Challenge
 const imgContainer = document.querySelector('.images');
 
-const createImage = function (imgPath) {
-  return new Promise(function (resolve, reject) {
-    const img = document.createElement('img');
-    img.src = imgPath;
-    img.addEventListener('load', function () {
-      imgContainer.append(img);
-      resolve(img);
-    });
-    img.addEventListener('error', function () {
-      reject(new Error('Image not found'));
-    });
-  });
-};
+// const createImage = function (imgPath) {
+//   return new Promise(function (resolve, reject) {
+//     const img = document.createElement('img');
+//     img.src = imgPath;
+//     img.addEventListener('load', function () {
+//       imgContainer.append(img);
+//       resolve(img);
+//     });
+//     img.addEventListener('error', function () {
+//       reject(new Error('Image not found'));
+//     });
+//   });
+// };
 
-let currentImg;
+// let currentImg;
 
-createImage('img/img-1.jpg')
-  .then(img => {
-    currentImg = img;
-    console.log('Img 1 loaded');
-    return wait(2);
-  })
-  .then(() => {
-    currentImg.style.display = 'none';
-    return createImage('img/img-2.jpg');
-  })
-  .then(img => {
-    currentImg = img;
-    console.log('Img 2 loaded');
-    return wait(2);
-  })
-  .then(() => {
-    currentImg.style.display = 'none';
-  })
-  .catch(err => console.error(err));
+// createImage('img/img-1.jpg')
+//   .then(img => {
+//     currentImg = img;
+//     console.log('Img 1 loaded');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//     return createImage('img/img-2.jpg');
+//   })
+//   .then(img => {
+//     currentImg = img;
+//     console.log('Img 2 loaded');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//   })
+//   .catch(err => console.error(err));
 
 // ASYNC AWAIT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // *************************************************
@@ -506,3 +506,76 @@ Promise.any([
 ])
   .then(res => console.log(res))
   .catch(err => console.error(err));
+
+const createImage = function (imgPath) {
+  return new Promise(function (resolve, reject) {
+    const img = document.createElement('img');
+    img.src = imgPath;
+    img.addEventListener('load', function () {
+      imgContainer.append(img);
+      resolve(img);
+    });
+    img.addEventListener('error', function () {
+      reject(new Error('Image not found'));
+    });
+  });
+};
+
+// let currentImg;
+
+// createImage('img/img-1.jpg')
+//   .then(img => {
+//     currentImg = img;
+//     console.log('Img 1 loaded');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//     return createImage('img/img-2.jpg');
+//   })
+//   .then(img => {
+//     currentImg = img;
+//     console.log('Img 2 loaded');
+//     return wait(2);
+//   })
+//   .then(() => {
+//     currentImg.style.display = 'none';
+//   })
+//   .catch(err => console.error(err));
+
+const loadNPause = async function () {
+  try {
+    // load img-1
+    let img = await createImage('img/img-1.jpg');
+    console.log('Img 1 loaded');
+    // wait
+    await wait(2);
+    // hide
+    img.style.display = 'none';
+    await wait(2);
+
+    // load img-2
+    img = await createImage('img/img-2.jpg');
+    console.log('Img 2 loaded');
+    //wait
+    await wait(2);
+    // hide
+    img.style.display = 'none';
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+//loadNPause();
+
+const loadAll = async function (imgArr) {
+  try {
+    const imgs = imgArr.map(async img => await createImage(img));
+    console.log(imgs);
+    const imgsEl = Promise.all(imgs);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+loadAll();
