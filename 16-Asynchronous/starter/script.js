@@ -61,7 +61,7 @@ const renderCountry = function (data, className = '') {
 
 const renderError = function (msg) {
   countriesContainer.insertAdjacentText('beforeend', msg);
-  //countriesContainer.style.opacity = 1;
+  countriesContainer.style.opacity = 1;
 };
 
 // const getCountryAndNeighbour = function (country) {
@@ -369,28 +369,43 @@ const getPosition = function () {
 };
 
 const whereAmI = async function () {
-  //Geolocation - where am I
-  const position = await getPosition();
+  try {
+    //Geolocation - where am I
+    const position = await getPosition();
 
-  const { latitude: lat, longitude: lng } = position.coords;
+    const { latitude: lat, longitude: lng } = position.coords;
 
-  // Reverse geocoding - give me country where am I
-  const responseGeo = await fetch(
-    `https://geocode.xyz/${lat},${lng}?geoit=json`
-  );
-  const dataGeo = await responseGeo.json();
+    // Reverse geocoding - give me country where am I
+    const responseGeo = await fetch(
+      `https://geocode.xyz/${lat},${lng}?geoit=json`
+    );
+    // creating error manually ------------------- because fetch doesn't automatically reject in case of 403 and some other errors...
+    if (!responseGeo.ok) throw new Error('Problem getting location data...');
+    const dataGeo = await responseGeo.json();
 
-  console.log(dataGeo);
-
-  // Country of where I am data:
-  // fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(response =>
-  //   console.log(response)
-  // );
-  const response = await fetch(
-    `https://restcountries.eu/rest/v2/name/${dataGeo.country}`
-  );
-  const data = await response.json();
-  renderCountry(data[0]);
+    // Country of where I am data:
+    // fetch(`https://restcountries.eu/rest/v2/name/${country}`).then(response =>
+    //   console.log(response)
+    // );
+    const response = await fetch(
+      `https://restcountries.eu/rest/v2/name/${dataGeo.country}`
+    );
+    // creating error manually ------------------- because fetch doesn't automatically reject in case of 403 and some other errors...
+    if (!response.ok) throw new Error('Problem getting country data...');
+    const data = await response.json();
+    renderCountry(data[0]);
+  } catch (err) {
+    console.error(err.message);
+    renderError(`Something went wrong... ${err.message}`);
+  }
 };
 
 whereAmI();
+
+// try {
+//   let y = 1;
+//   const x = 2;
+//   x = 3;
+// } catch (err) {
+//   alert(err.message);
+// }
