@@ -1,17 +1,17 @@
 // importing module
-console.log('Inporting module');
+console.log('Iporting module');
 
-// import {
-//   addToCart,
-//   totalPrice as price,
-//   totalQuantity,
-// } from './shoppingCart.js';
-// addToCart('bread', 5);
-//console.log(price, totalQuantity);
+import {
+  addToCart,
+  totalPrice as price,
+  totalQuantity,
+} from './shoppingCart.js';
+addToCart('bread', 5);
+console.log(price, totalQuantity);
 
-// import * as ShoppingCart from './shoppingCart.js';
-// ShoppingCart.addToCart('veggies', 8);
-// console.log(ShoppingCart.totalPrice);
+import * as ShoppingCart from './shoppingCart.js';
+ShoppingCart.addToCart('veggies', 8);
+console.log(ShoppingCart.totalPrice);
 
 import add from './shoppingCart.js';
 
@@ -37,8 +37,8 @@ const getLastPost = async function () {
 // not very clean
 // lastPost.then(last => console.clear(last));
 
-const lastPost = await getLastPost();
-console.log(lastPost);
+// const lastPost = await getLastPost();
+// console.log(lastPost);
 
 // Module pattern
 
@@ -66,7 +66,11 @@ const ShoppingCart2 = (function () {
 ShoppingCart2.addToCart('apple', 4); // addToCart function can still access cart because it's scope is the same as this function's scope (the function's birth place scope), so function can still manipulate it
 console.log(ShoppingCart2);
 
-import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+////////////////////////////////////////////////
+
+// import cloneDeep from '../node_modules/lodash-es/cloneDeep.js';
+
+import cloneDeep from 'lodash-es';
 
 const state = {
   cart: [
@@ -92,3 +96,22 @@ const stateDeepClone = cloneDeep(state);
 state.user.loggedIn = false;
 
 console.log(stateDeepClone);
+
+if (module.hot) {
+  module.hot.accept();
+}
+
+class Person {
+  greeting = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.greeting}, ${this.name}`);
+  }
+}
+
+const jonas = new Person('Jonas');
+
+import 'core-js';
+//import 'core-js/stable/array/find';
+
+import 'regenerator-runtime/runtime';
