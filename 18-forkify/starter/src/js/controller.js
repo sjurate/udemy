@@ -22,12 +22,11 @@ const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
     if (!id) return;
-
     recipeView.renderSpinner();
-
-    // LOADING  recipe
+    // 0 Update results view to mark selected search result
+    resultsView.update(model.getSearchResultsPage());
+    // 1 LOADING  recipe
     await model.loadRecipe(id);
-
     // 2 RENDERING recipe
     recipeView.render(model.state.recipe);
   } catch (err) {
