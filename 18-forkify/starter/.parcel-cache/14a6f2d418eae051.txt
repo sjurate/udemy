@@ -1,4 +1,4 @@
-7671
+7672
 93C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\sass\_base.scss133137634053824464 0
 111C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\terser\lib\propmangle.js133154290599274221 0
 118C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\array-with.js133154827363048398 0
@@ -22,7 +22,7 @@
 106C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\json133154827432033334 1
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.array.splice.js133154827374749274 0
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\type-fest\ts41\delimiter-case.d.ts133154290592700563 0
-78C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist133156583867093251 1
+78C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist133156756959772518 1
 130C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\typed-array\find-last-index.js133154827388610053 0
 147C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\posthtml\node_modules\posthtml-parser\dist\chunk.2UQLUWPH.js133154290585971373 0
 84C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\.gitignore133154290956463390 0
@@ -42,8 +42,33 @@
 135C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.reflect.prevent-extensions.js133154827377619494 0
 113C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\forkify-architecture-recipe-loading.png133137634050531023 0
 127C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\string\virtual\fontcolor.js133154827391810285 0
+138C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\optimizer-htmlnano\lib\HTMLNanoOptimizer.js133154290585811402 0
+123C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\webgl2.js133154290621894489 0
+128C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\import-maps.js133154290611899260 0
+115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\es\function\index.js133154827400260933 0
+116C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\domutils\lib\helpers.d.ts.map133154290592640565 0
+121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lines-and-columns\build\index.d.ts133154290588920572 0
+103C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\term-size\vendor133154290588995618 1
+97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-select133154290595921397 1
+125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\use-symbol-as-uid.js133154827437173697 0
+103C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\views\addRecipeView.js133156746005334274 0
 102C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\forkify-flowchart-part-3.png133137634051628789 0
 92C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\tslib133154290592644337 1
+120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@lmdb\lmdb-win32-x64\package.json133154290584141254 0
+107C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\actual\error133154827432133345 1
+121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\object\to-string.js133154827432623381 0
+122C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\promise\all-settled.js133154827361188267 0
+95C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\entities133154290594829055 1
+114C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\global-this.js133154827396080638 0
+113C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\htmlnano\docs\netlify.toml133154290600742765 0
+198C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\.pnpm\source-pnpm@1.0.0\node_modules\source-pnpm\source.js133154290600862769 0
+129C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\reflect\prevent-extensions.js133154827416152137 0
+115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\posthtml-parser\package.json133154290588955611 0
+115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\math\index.js133154827402931136 0
+120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers\lib\childState.js133154290591150453 0
+131C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers\src\threads\ThreadsWorker.js133154290597259517 0
+134C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\chacha20-poly1305.js133154290601789151 0
+91C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@swc133154290562089813 1
 119C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\object\has-own.js133154827397570736 0
 95C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\chokidar133154291223735470 1
 128C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\input-range.js133154290612444548 0
@@ -60,21 +85,6 @@
 126C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\typed-array\entries.js133154827373319176 0
 84C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\index.html133155744038249335 0
 132C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.typed-array.uint8-array.js133154827380419703 0
-120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@lmdb\lmdb-win32-x64\package.json133154290584141254 0
-107C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\actual\error133154827432133345 1
-121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\object\to-string.js133154827432623381 0
-122C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\promise\all-settled.js133154827361188267 0
-95C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\entities133154290594829055 1
-114C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\global-this.js133154827396080638 0
-113C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\htmlnano\docs\netlify.toml133154290600742765 0
-198C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\node-resolver-core\test\fixture\node_modules\.pnpm\source-pnpm@1.0.0\node_modules\source-pnpm\source.js133154290600862769 0
-129C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\reflect\prevent-extensions.js133154827416152137 0
-115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\posthtml-parser\package.json133154290588955611 0
-115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\math\index.js133154827402931136 0
-120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers\lib\childState.js133154290591150453 0
-131C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers\src\threads\ThreadsWorker.js133154290597259517 0
-134C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\chacha20-poly1305.js133154290601789151 0
-91C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@swc133154290562089813 1
 118C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\es\number\is-integer.js133154827405171310 0
 86C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules133154887152052822 1
 120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\instance\trim-end.js133154827433053400 0
@@ -192,7 +202,7 @@
 90C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\config.js133155856733783164 0
 127C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-tree\lib\syntax\node\SelectorList.js133154290602429189 0
 136C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\esnext.async-iterator.to-array.js133154827381579524 0
-94C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\controller.js133156584358760953 0
+94C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\controller.js133156750784891737 0
 107C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lmdb\src\lmdb-js.cpp133154290601394479 0
 95C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\anymatch133154291223265443 1
 138C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_dump.c133154290597971375 0
@@ -210,9 +220,9 @@
 130C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\number\max-safe-integer.js133154827412491849 0
 113C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-what\lib\es\parse.d.ts133154290595416393 0
 123C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@swc\helpers\lib\_read_only_error.js133154290600259814 0
-86C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\views133156564639025256 1
+86C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\views133156729046428118 1
 131C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\rel-noreferrer.js133154290618730655 0
-89C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\model.js133156556090598511 0
+89C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\src\js\model.js133156757703383183 0
 104C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\csso\lib\index.js133154290596979905 0
 105C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\yaml\browser\types133154290597941351 1
 125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.array.find-index.js133154827374169227 0
@@ -381,15 +391,6 @@
 125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\set-to-string-tag.js133154827421682537 0
 115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\array\fill.js133154827386239867 0
 94C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js133154827439073840 1
-138C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\optimizer-htmlnano\lib\HTMLNanoOptimizer.js133154290585811402 0
-123C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\webgl2.js133154290621894489 0
-128C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\import-maps.js133154290611899260 0
-115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\es\function\index.js133154827400260933 0
-116C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\domutils\lib\helpers.d.ts.map133154290592640565 0
-121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lines-and-columns\build\index.d.ts133154290588920572 0
-103C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\term-size\vendor133154290588995618 1
-97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-select133154290595921397 1
-125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\use-symbol-as-uid.js133154827437173697 0
 130C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\update-browserslist-db\check-npm-version.js133154290585281326 0
 118C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\regions\SL.js133154290619530175 0
 114C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\domutils\lib\feeds.d.ts.map133154290592310539 0
@@ -601,7 +602,7 @@
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\actual\typed-array\from.js133154827393400426 0
 110C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\terser\bin\package.json133154290599899793 0
 97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\nullthrows133154290589467157 1
-97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\icons.21bad73c.svg133156580290779334 0
+97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\icons.21bad73c.svg133156756959552492 0
 116C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\v8-compile-cache\package.json133154290586620764 0
 108C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\safe-buffer\README.md133154290587730833 0
 129C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\object\define-property.js133154827370828983 0
@@ -765,7 +766,7 @@
 108C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\codeframe\src133154290595712560 1
 126C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\dom-collections\index.js133154827402721106 0
 140C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lmdb\node_modules\node-addon-api\package-support.json133154290594239038 0
-99C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\favicon.8b2f57bf.png133156580290799344 0
+99C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\favicon.8b2f57bf.png133156756959662484 0
 104C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\yaml\package.json133154290599391941 0
 123C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\string\virtual\sup.js133154827428393054 0
 125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\typed-array\index-of.js133154827399300854 0
@@ -1447,10 +1448,6 @@
 118C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\plugin\src\PluginAPI.js133154290587110790 0
 106C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\terser\CHANGELOG.md133154290600179824 0
 120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-tree\lib\lexer\match-graph.js133154290601082783 0
-122C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\string\virtual\link.js133154827409751648 0
-126C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\async-iterator\to-array.js133154827429023086 0
-118C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\regions\KY.js133154290614094455 0
-138C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_load.1133154290595822570 0
 98C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\terser\dist133154290599939788 1
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\object\is-sealed.js133154827405851338 0
 101C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\terser\main.js133154290598221409 0
@@ -2588,6 +2585,10 @@
 114C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\es\string\substr.js133154827427993032 0
 112C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-select\lib\index.d.ts133154290596739883 0
 138C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_drop.c133154290597749558 0
+122C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\string\virtual\link.js133154827409751648 0
+126C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\async-iterator\to-array.js133154827429023086 0
+118C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\regions\KY.js133154290614094455 0
+138C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\lmdb\dependencies\lmdb\libraries\liblmdb\mdb_load.1133154290595822570 0
 127C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\dom-serializer\lib\foreignNames.d.ts.map133154290591680498 0
 124C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\is-big-int-array.js133154827404321268 0
 128C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\stable\number\min-safe-integer.js133154827412981872 0
@@ -3415,7 +3416,7 @@
 114C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\es\number\is-nan.js133154827405461314 0
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-tree\lib\syntax\atrule\page.js133154290601919160 0
 126C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-tree\lib\lexer\generic-an-plus-b.js133154290599411951 0
-89C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.html133156580290779334 0
+89C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.html133156756959392466 0
 116C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-tree\lib\lexer\generic.js133154290599573190 0
 114C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\css-tree\lib\lexer\index.js133154290600389834 0
 126C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\symbol\metadata-key.js133154827412601965 0
@@ -4212,7 +4213,7 @@
 133C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.reflect.get-prototype-of.js133154827377479478 0
 125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\array\virtual\fill.js133154827386069859 0
 120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.reflect.get.js133154827377509486 0
-97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.f7626f62.css133156580290779334 0
+97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.f7626f62.css133156756959382456 0
 125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\string\virtual\pad-end.js133154827414952036 0
 130C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.reflect.is-extensible.js133154827377559480 0
 125C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\modules\es.reflect.own-keys.js133154827377579511 0
@@ -4663,7 +4664,7 @@
 119C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\get-iterator.js133154827394560505 0
 119C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\events\lib\Disposable.js133154290585841371 0
 117C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\is-regexp.js133154827405621327 0
-101C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.f7626f62.css.map133156580290959347 0
+101C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.f7626f62.css.map133156756959532472 0
 115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\iterate.js133154827406831422 0
 135C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\internals\iterator-create-constructor.js133154827406891427 0
 123C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\actual\date\to-gmt-string.js133154827429563151 0
@@ -4915,7 +4916,6 @@
 122C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\actual\typed-array\slice.js133154827423572688 0
 122C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\symbol\to-primitive.js133154827430633224 0
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\symbol\unscopables.js133154827436433654 0
-115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\array\at.js133154827364248484 0
 123C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\es\array\virtual\includes.js133154827398310773 0
 116C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\string\anchor.js133154827361478286 0
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\full\string\code-points.js133154827367598723 0
@@ -5566,6 +5566,7 @@
 131C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\runtime-js\src\helpers\bundle-url.js133154290590401026 0
 130C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\async-iterator\to-array.js133154827428973096 0
 127C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\array-buffer\is-view.js133154827406081366 0
+115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\array\at.js133154827364248484 0
 118C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\regions\CZ.js133154290607763275 0
 119C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\core-js\features\array\concat.js133154827368188780 0
 134C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\caniuse-lite\data\features\channel-messaging.js133154290601839173 0
@@ -7058,7 +7059,7 @@
 110C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\transformer-css133154290588099146 1
 100C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\utils133154290601022773 1
 102C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers133154290598792695 1
-96C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\logo.726d37a8.png133156580290799344 0
+96C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\logo.726d37a8.png133156756959392466 0
 115C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers\package.json133154290598742700 0
 106C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers\src133154290598401411 1
 141C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\workers\test\integration\workerfarm\console.js133154290592260538 0
@@ -7440,7 +7441,7 @@
 127C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\graph\test\AdjacencyList.test.js133154290590653888 0
 119C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\graph\test\Graph.test.js133154290593018925 0
 148C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\graph\test\integration\adjacency-list-shared-array.js133154290585991388 0
-96C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.e37f48ea.js133156583867003258 0
+96C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.e37f48ea.js133156756959682489 0
 121C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\graph\src\AdjacencyList.js133154290589617148 0
 120C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\graph\src\ContentGraph.js133154290591590490 0
 113C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\@parcel\graph\src\index.js133154290593518985 0
@@ -7667,6 +7668,6 @@
 96C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\.bin\svgo133154290623149821 0
 100C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\.bin\svgo.cmd133154290623149821 0
 100C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\node_modules\.bin\svgo.ps1133154290623149821 0
-97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\icons.dfd7a6db.svg133156580290779334 0
+97C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\icons.dfd7a6db.svg133156756959352463 0
 105C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\icons.dfd7a6db.svg.1712.2z133155744053675324 0
-100C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.e37f48ea.js.map133156583867063264 0
+100C:\Users\rasau\OneDrive\Dokumentai\_39_Front-end\udemy\18-forkify\starter\dist\index.e37f48ea.js.map133156756959752512 0
